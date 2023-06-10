@@ -1,12 +1,9 @@
 <h1 align="center">Packer</h1>
 
-![статус](https://github.com/exp-ext/drf_project_template/actions/workflows/main.yml/badge.svg?event=push)
-
-<td>
+<p align="center">
     <img src="https://github.com/exp-ext/drf_project_template/blob/main/backend/static/git/big.jpg" width="400">
-</td>
+</p>
 
-<div class="markdown prose w-full break-words dark:prose-invert light">
 
 <h2>Data Conversion Script</h2>
 
@@ -24,19 +21,20 @@
 <h3>Setup</h3>
 
 <ol>
+
 <li>
 <p>Import the necessary modules and packages:</p><pre>
 
 ```python
 from pathlib import Path
 import pandas as pd
-fromapi.models import CargotypeInfo, Carton, CartonPrice, Sku, SkuCargotypes
+from api.models import CargotypeInfo, Carton, CartonPrice, Sku, SkuCargotypes
+
 ```
 
 </li>
 
 <li>
-
 <p>Define the path where the data files are located:</p>
 
 ```python
@@ -50,25 +48,22 @@ HOME_PATH = f'{Path.home()}/Desktop/data'
 <p>Configure the <code>MODEL_DATA</code> dictionary:</p>
 
 <ul>
+
 <li>
 <p>Each key represents a Django model.</p>
 </li>
 
 <li>
 <p>The values are dictionaries containing the conversion settings for each model.</p>
-
 <ul>
-
-<li>
-<code>type</code>: The Pandas function to use for reading the file (e.g., <code>pd.read_csv</code>, <code>pd.read_excel</code>).
-</li>
-
-<li><code>file_name</code>: The name of the data file.</li><li><code>model_fields</code>: The fields of the model to populate with the converted data.</li>
-<li><code>file_fields</code>: The corresponding fields in the data file.</li>
-<li><code>cleaner</code>: A list of functions to clean the data values before assigning them to the model fields.</li>
-<li><code>getter</code>: A list of getter functions to retrieve related data if needed.</li>
+    <li><code>type</code>: The Pandas function to use for reading the file (e.g., <code>pd.read_csv</code>, <code>pd.read_excel</code>).</li>
+    <li><code>file_name</code>: The name of the data file.</li><li><code>model_fields</code>: The fields of the model to populate with the converted data.</li>
+    <li><code>file_fields</code>: The corresponding fields in the data file.</li>
+    <li><code>cleaner</code>: A list of functions to clean the data values before assigning them to the model fields.</li>
+    <li><code>getter</code>: A list of getter functions to retrieve related data if needed.</li>
 </ul>
 </li>
+
 </ul>
 
 ```python
@@ -96,8 +91,6 @@ MODEL_DATA = {
 </li>
 
 </ol>
-
-
 
 <h3>Data Conversion</h3>
 
@@ -141,7 +134,6 @@ def convert_to_models():
 
 
 <p>To run the data conversion process, simply call the <code>convert_to_models()</code> function.</p>
-
 
 ```python
 results = convert_to_models()
